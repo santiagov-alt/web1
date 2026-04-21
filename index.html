@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,15 +20,15 @@
             text-align: center;
         }
         img {
-            max-width: 100%;
+            max-width: 300px;
             height: auto;
         }
     </style>
 </head>
 <body>
     <div>
-        <img src="https://miro.medium.com/v2/resize:fit:3840/format:webp/1*2u5Hf8A9MxDHXU40eYlmbw.png" alt="Saturn" />
-        <h1>Welcome, <span id="user-name"></span>!</h1>
+        <img src="https://miro.medium.com/v2/resize:fit:3840/format:webp/1*2u5Hf8A9MxDHXU40eYlmbw.png" alt="Saturno" />
+        <h1>¡Bienvenido, <span id="user-name"></span>!</h1>
         <input type="text" id="name-input" placeholder="Ingrese su nombre:" />
         <p id="clock"></p>
     </div>
@@ -43,7 +43,7 @@
 
         function updateClock() {
             const now = new Date();
-            clockDisplay.textContent = now.toUTCString();
+            clockDisplay.textContent = now.toLocaleString('es-ES');
         }
 
         setInterval(updateClock, 1000);
