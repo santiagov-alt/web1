@@ -6,51 +6,48 @@
     <title>Welcome Page</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            background-color: #FFD700; /* Golden color */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #f0f0f0;
-            color: #333;
-        }
-        input {
-            padding: 10px;
-            margin: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
         h1 {
-            margin-top: 20px;
+            color: white;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
-    <input type="text" id="nameInput" placeholder="Enter your name" />
-    <h1 id="welcomeMessage"></h1>
-    <p id="localTime"></p>
-
+    <div>
+        <img src="https://example.com/saturn.jpg" alt="Saturn" />
+        <h1>Welcome, <span id="user-name"></span>!</h1>
+        <input type="text" id="name-input" placeholder="Enter your name" />
+        <p id="clock"></p>
+    </div>
     <script>
-        const nameInput = document.getElementById('nameInput');
-        const welcomeMessage = document.getElementById('welcomeMessage');
-        const localTime = document.getElementById('localTime');
+        const nameInput = document.getElementById('name-input');
+        const userNameDisplay = document.getElementById('user-name');
+        const clockDisplay = document.getElementById('clock');
 
-        nameInput.addEventListener('keypress', function (event) {
-            if (event.key === 'Enter') {
-                const name = nameInput.value;
-                welcomeMessage.textContent = `Bienvenido ${name}`;
-                nameInput.value = '';
-            }
+        nameInput.addEventListener('input', () => {
+            userNameDisplay.textContent = nameInput.value;
         });
 
-        function updateTime() {
+        function updateClock() {
             const now = new Date();
-            localTime.textContent = `Current Time: ${now.toLocaleTimeString()}`;
+            clockDisplay.textContent = now.toUTCString();
         }
 
-        setInterval(updateTime, 1000);
-        updateTime(); // Initial call to display time immediately
+        setInterval(updateClock, 1000);
+        updateClock();
     </script>
 </body>
 </html>
