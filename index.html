@@ -1,28 +1,17 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            background-color: #1a1a2e; /* Dark color similar to Saturn */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        /* Centering all objects */
-        .container {
-            text-align: center;
-        }
-    </style>
+    <title>Web1</title>
 </head>
 <body>
-    <div class="container">
-        <!-- Your content goes here -->
-        <h1>Hello World</h1>
-    </div>
+    <input type="text" id="username" placeholder="Enter your username">
+    <script>
+        const usernameInput = document.getElementById('username');
+        usernameInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                // Logic to update the username goes here
+                console.log('Username updated to:', usernameInput.value);
+            }
+        });
+    </script>
 </body>
 </html>
