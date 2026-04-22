@@ -1,53 +1,28 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido a Saturno</title>
+    <title>Document</title>
     <style>
         body {
-            background-color: #FFD700; /* Golden color */
+            background-color: #1a1a2e; /* Dark color similar to Saturn */
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: Arial, sans-serif;
         }
-        h1 {
-            color: white;
+        /* Centering all objects */
+        .container {
             text-align: center;
-        }
-        img {
-            max-width: 300px;
-            height: auto;
         }
     </style>
 </head>
 <body>
-    <div>
-        <img src="https://miro.medium.com/v2/resize:fit:3840/format:webp/1*2u5Hf8A9MxDHXU40eYlmbw.png" alt="Saturno" />
-        <h1>¡Bienvenido, <span id="user-name"></span>!</h1>
-        <input type="text" id="name-input" placeholder="Ingrese su nombre:" />
-        <p id="clock"></p>
+    <div class="container">
+        <!-- Your content goes here -->
+        <h1>Hello World</h1>
     </div>
-    <script>
-        const nameInput = document.getElementById('name-input');
-        const userNameDisplay = document.getElementById('user-name');
-        const clockDisplay = document.getElementById('clock');
-
-        nameInput.addEventListener('input', () => {
-            userNameDisplay.textContent = nameInput.value;
-        });
-
-        function updateClock() {
-            const now = new Date();
-            clockDisplay.textContent = now.toLocaleString('es-ES');
-        }
-
-        setInterval(updateClock, 1000);
-        updateClock();
-    </script>
 </body>
 </html>
